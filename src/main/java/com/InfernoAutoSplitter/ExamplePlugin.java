@@ -1,4 +1,4 @@
-package com.example;
+package com.InfernoAutoSplitter;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
