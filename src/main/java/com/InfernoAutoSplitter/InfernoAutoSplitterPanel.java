@@ -17,13 +17,13 @@ public class InfernoAutoSplitterPanel extends PluginPanel
 {
     private final Client client;
     private final InfernoAutoSplitterConfig config;
-    private final InfernoAutoSplitter splitter;
+    private final InfernoAutoSplitterPlugin splitter;
     private PrintWriter writer;
     private Socket socket;
     private JLabel status;
 
     @Inject
-    InfernoAutoSplitterPanel(Client client, PrintWriter writer, InfernoAutoSplitterConfig config, InfernoAutoSplitter splitter){
+    InfernoAutoSplitterPanel(Client client, PrintWriter writer, InfernoAutoSplitterConfig config, InfernoAutoSplitterPlugin splitter){
         this.client = client;
         this.writer = writer;
         this.config = config;

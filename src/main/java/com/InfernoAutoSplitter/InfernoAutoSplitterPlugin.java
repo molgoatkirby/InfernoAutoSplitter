@@ -33,7 +33,7 @@ import java.net.Socket;
         enabledByDefault = false,
         description = "Automatically splits for LiveSplit in Inferno"
 )
-public class InfernoAutoSplitter extends Plugin {
+public class InfernoAutoSplitterPlugin extends Plugin {
 
     // The tick we entered the instance
     private int lastTick = 0;
@@ -76,7 +76,7 @@ public class InfernoAutoSplitter extends Plugin {
     @Override
     protected void startUp()
     {
-        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/icon.png");
+        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "icon.png");
         panel = new InfernoAutoSplitterPanel(client, writer, config, this);
         navButton = NavigationButton.builder().tooltip("LiveSplit controller")
                 .icon(icon).priority(6).panel(panel).build();
