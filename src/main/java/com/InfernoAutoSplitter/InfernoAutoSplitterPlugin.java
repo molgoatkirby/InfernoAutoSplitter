@@ -1,8 +1,9 @@
 /*
-InfernoLiveSplitPlugin
+InfernoAutoSplitterPlugin
 Connects to LiveSplit Server and automatically does the splits for the Inferno
-Discord ID: Naabe#9999
-10/28/2021
+Created by Molgoatkirby and Naabe
+Credit to SkyBouncer's CM AutoSplitter, the code for the panel and config comes largely from that
+Initial date: 10/28/2021
  */
 
 package com.InfernoAutoSplitter;
@@ -25,7 +26,6 @@ import net.runelite.client.util.ImageUtil;
 import javax.inject.Inject;
 import java.awt.image.BufferedImage;
 import java.io.PrintWriter;
-import java.net.Socket;
 
 @Slf4j
 @PluginDescriptor(
@@ -40,7 +40,6 @@ public class InfernoAutoSplitterPlugin extends Plugin {
 
     // The variables to interact with livesplit
     PrintWriter writer;
-    private Socket socket;
 
     // The waves we have splits for
     private final int[] SPLIT_WAVES = new int[] {9, 18, 25, 35, 42, 50, 57, 60, 63, 66, 67, 68, 69};
@@ -66,8 +65,8 @@ public class InfernoAutoSplitterPlugin extends Plugin {
 
     /*
     void startUp
-    The function is called when Runelite loads the plugin or is enabled by the user. We try to connect to the LiveSplit server
-     and create some variables to communicate with the server
+    The function is called when Runelite loads the plugin or is enabled by the user. We create the panel and give it
+    access to what it needs
     Parameters:
         None
     Returns:
@@ -76,9 +75,9 @@ public class InfernoAutoSplitterPlugin extends Plugin {
     @Override
     protected void startUp()
     {
-        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "icon.png");
+        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/icon.png");
         panel = new InfernoAutoSplitterPanel(client, writer, config, this);
-        navButton = NavigationButton.builder().tooltip("LiveSplit controller")
+        navButton = NavigationButton.builder().tooltip("Inferno Autosplit")
                 .icon(icon).priority(6).panel(panel).build();
         clientToolbar.addNavigation(navButton);
 
@@ -200,8 +199,7 @@ public class InfernoAutoSplitterPlugin extends Plugin {
      */
     private void sendMessage(String message) {
 
-        if (socket != null && writer != null) {
-
+        if (writer != null) {
             writer.write(message + "\r\n");
             writer.flush();
         }
