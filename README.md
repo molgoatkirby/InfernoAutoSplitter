@@ -1,22 +1,8 @@
 # Autosplitter for LiveSplit for Inferno
 
-Connects to livesplit and sends a split on the following waves:
+Connects to livesplit and sends a split at the start and end, and on waves which other inferno plugins commonly show split times for.
 
-Right before Wave 1 starts  
-9 melee  
-18 ranger  
-25 ranger + melee  
-35 mager  
-42 mager + melee  
-50 mager + ranger  
-57 mager + ranger + melee  
-60 mager + ranger + melee + blob  
-63 mager + ranger + melee + blob x2  
-66 mager x2  
-67 Jad  
-68 Jad x 3  
-69 Zuk  
-After Zuk dies
+
 
 Using this plugin requires the LiveSplit program with the LiveSplit server component.
 
@@ -49,28 +35,23 @@ If your status is green you are good to go.
 
 
 ## Templates
-Layout and splits templates for LiveSplit can be found in [LiveSplit templates](https://github.com/SkyBouncer/cmAutoSplitter/tree/master/LiveSplit%20templates)
+Layout and splits templates for LiveSplit can be found in [LiveSplit templates](https://github.com/molgoatkirby/InfernoAutoSplitter/tree/master/LiveSplit%20templates)
 
 ## Splits
-The plugins sends a split on the following:
+The plugins sends a split on the following waves:
 
-- Raid start
-- Tekton
-- Crabs
-- Ice Demon (Ice pop optional)
-- Shamans
-- Upper floor
-- Vanguards
-- Thieving
-- Vespula
-- Rope
-- Middle floor
-- Guardians
-- Vasa
-- Mystics
-- Muttadile (Tree cut optional)
-- Lower floor
-- Olm P1
-- Olm P2
-- Olm P3
-- Done
+- Right before Wave 1 starts  
+- 9 melee  
+- 18 ranger  
+- 25 ranger + melee  
+- 35 mager  
+- 42 mager + melee  
+- 50 mager + ranger  
+- 57 mager + ranger + melee  
+- 60 mager + ranger + melee + blob  
+- 63 mager + ranger + melee + blob x2  
+- 66 mager x2  
+- 67 Jad  
+- 68 Jad x 3  
+- 69 Zuk  
+- After Zuk dies
