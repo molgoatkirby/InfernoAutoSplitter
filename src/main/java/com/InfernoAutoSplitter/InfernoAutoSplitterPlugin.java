@@ -75,7 +75,7 @@ public class InfernoAutoSplitterPlugin extends Plugin {
     @Override
     protected void startUp()
     {
-        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/icon.png");
+        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/inferno_split_icon.png");
         panel = new InfernoAutoSplitterPanel(client, writer, config, this);
         navButton = NavigationButton.builder().tooltip("Inferno Autosplit")
                 .icon(icon).priority(6).panel(panel).build();
